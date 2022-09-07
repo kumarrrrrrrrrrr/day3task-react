@@ -1,24 +1,43 @@
-import logo from './logo.svg';
+ import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import PriceCard  from './priceCard';
 
 function App() {
+ 
+  let priceCard =[
+{
+title :'Free',
+price : 0
+},
+{
+  title :'plus',
+  price : 29
+  },
+  {
+    title :'pro',
+    price : 49
+    }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="pricing py-5">
+      <div className="container">
+        <div className="row">
+
+      {
+priceCard.map((card) => {
+   return <PriceCard></PriceCard>
+})
+
+      }
+
+        </div>
+      </div>
+    </section>
+
+
+
   );
 }
 
